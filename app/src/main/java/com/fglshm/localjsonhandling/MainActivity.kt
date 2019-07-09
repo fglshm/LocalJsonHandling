@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             val jsonString = item.toString()
             val parser = JsonParser()
             val mJson = parser.parse(jsonString)
-            val country = Gson().fromJson(mJson, Country::class.java) as? Country
+            val country: Country? = Gson().fromJson(mJson, Country::class.java)
             adapter.add(country)
         }
     }
